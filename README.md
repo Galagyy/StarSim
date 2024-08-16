@@ -1,6 +1,6 @@
-<center>
+<div align="center">
     <img src=src\docs\StarSimLogo.png alt="StarSim Logo" width="500">
-</center>
+</div>
 
 > Starsim is a simple requests library for physics simulations.
 
