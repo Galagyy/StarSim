@@ -20,7 +20,7 @@ In order to build StarSim, you can use [Docker](https://www.docker.com/products/
 ```bash
 # Start the project.
 ./gradlew build -x test
-copy build/libs/starsim-0.0.1-SNAPSHOT-plain.jar src/main/docker
+copy build/libs/starsim-0.0.1-SNAPSHOT.jar src/main/docker
 docker compose up
 
 # Shutdown the project.
