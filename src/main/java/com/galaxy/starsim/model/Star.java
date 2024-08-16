@@ -19,7 +19,7 @@ public class Star {
     private ScientificNotation radius;
 
     @OneToMany(mappedBy = "star")
-    private List<Planet> plants;
+    private List<Planet> planets;
 
     public Long getID() {
         return ID;
@@ -53,19 +53,19 @@ public class Star {
         this.radius = radius;
     }
 
-    public List<Planet> getPlants() {
-        return plants;
+    public List<Planet> getPlanets() {
+        return planets;
     }
 
-    public void setPlants(List<Planet> plants) {
-        this.plants = plants;
+    public void setPlanets(List<Planet> plants) {
+        this.planets = plants;
     }
 
-    public void addPlant(Planet planet) {
-        this.plants.add(planet);
+    public void addPlanet(Planet planet) {
+        this.planets.add(planet);
     }
 
     public void removePlanet(Planet planet) {
-        this.plants.remove(planet);
+        this.planets.remove(planet);
     }
 }

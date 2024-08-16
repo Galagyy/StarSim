@@ -10,6 +10,10 @@ public class Planet {
     private Long ID;
     private String name;
 
+    @ManyToOne
+    @JoinColumn(name = "star_id")
+    private Star star;
+
     @Convert(converter = ScientificNotation.class)
     private ScientificNotation mass;
 
