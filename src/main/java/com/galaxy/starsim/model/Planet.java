@@ -1,10 +1,11 @@
 package com.galaxy.starsim.model;
 
 import com.galaxy.starsim.model.extensions.ScientificNotation;
+import com.galaxy.starsim.model.extensions.SpaceEntity;
 import jakarta.persistence.*;
 
 @Entity
-public class Planet {
+public class Planet extends SpaceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
@@ -36,18 +37,22 @@ public class Planet {
         this.name = name;
     }
 
+    @Override
     public ScientificNotation getMass() {
         return mass;
     }
 
+    @Override
     public void setMass(ScientificNotation mass) {
         this.mass = mass;
     }
 
+    @Override
     public ScientificNotation getRadius() {
         return radius;
     }
 
+    @Override
     public void setRadius(ScientificNotation radius) {
         this.radius = radius;
     }

@@ -1,12 +1,13 @@
 package com.galaxy.starsim.model;
 
 import com.galaxy.starsim.model.extensions.ScientificNotation;
+import com.galaxy.starsim.model.extensions.SpaceEntity;
 import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
-public class Star {
+public class Star extends SpaceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
@@ -20,6 +21,11 @@ public class Star {
 
     @OneToMany(mappedBy = "star")
     private List<Planet> planets;
+
+    public Star(){
+        this.setX(0);
+        this.setY(0);
+    }
 
     public Long getID() {
         return ID;
@@ -37,18 +43,22 @@ public class Star {
         this.name = name;
     }
 
+    @Override
     public ScientificNotation getMass() {
         return mass;
     }
 
+    @Override
     public void setMass(ScientificNotation mass) {
         this.mass = mass;
     }
 
+    @Override
     public ScientificNotation getRadius() {
         return radius;
     }
 
+    @Override
     public void setRadius(ScientificNotation radius) {
         this.radius = radius;
     }
